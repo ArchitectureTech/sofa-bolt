@@ -354,6 +354,7 @@ public class RpcConnectionManagerTest {
         }
 
         Assert.assertEquals(1, cm.count(addr.getUniqueKey()));
+        cm.remove(conn);
         conn.close();
         Thread.sleep(100);
         Assert.assertEquals(0, cm.count(addr.getUniqueKey()));
